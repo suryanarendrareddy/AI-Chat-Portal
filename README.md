@@ -40,3 +40,17 @@ Core Features
   * Summary
   * Topics
   * Action Items
+
+## Tech Stack
+
+Backend
+Django
+Django REST Framework
+PostgreSQL
+Python
+OpenAI/Claude/Gemini OR LM Studio
+
+Frontend
+React
+Tailwind CSS
+Axios
