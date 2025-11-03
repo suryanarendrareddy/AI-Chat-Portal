@@ -219,4 +219,4 @@ POST /api/conversations/query/    # Ask AI about past chats
 ## 👤 Author
 
 **Muli Surya Narendra Reddy**
-Full-Stack Developer
+*Full-Stack Developer
