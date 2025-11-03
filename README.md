@@ -119,21 +119,28 @@ AI-Chat-Portal/
 * git clone <https://github.com/suryanarendrareddy/AI-Chat-Portal.git>
 * cd AI-Chat-Portal
 
-Backend Setup (Django + PostgreSQL)
+## Backend Setup (Django + PostgreSQL)
 
-1. Create Virtual Environment
+### **1. Create Virtual Environment**
+
+```bash
 cd backend
 python -m venv env
 source env/bin/activate   # For Linux/Mac
 env\Scripts\activate      # For Windows
+```
 
-2. Install Dependencies
+### **2. Install Dependencies**
+
+```bash
 pip install -r requirements.txt
+```
 
-3. Configure PostgreSQL
+### **3. Configure PostgreSQL**
 
-Update settings.py:
+Update **settings.py**:
 
+```python
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -144,9 +151,16 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+```
 
-4. Run Migrations
+### **4. Run Migrations**
+
+```bash
 python manage.py migrate
+```
 
-5. Run Backend Server
+### **5. Run Backend Server**
+
+```bash
 python manage.py runserver
+```
