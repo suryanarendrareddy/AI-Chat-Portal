@@ -164,3 +164,48 @@ python manage.py migrate
 ```bash
 python manage.py runserver
 ```
+
+## Frontend Setup (React + Tailwind)
+
+### **1. Install Node Modules**
+
+```bash
+cd frontend
+npm install
+```
+
+### **2.Run Frontend**
+
+```sql
+npm run dev
+```
+
+## API Documentation (OpenAPI / Swagger)
+
+Once the backend is running:
+
+###  Swagger UI
+
+```
+http://localhost:8000/api/docs/
+```
+
+---
+
+## API Endpoints
+
+### **GET Endpoints**
+
+```http
+GET /api/conversations/           # List all conversations
+GET /api/conversations/<id>/      # Full message history
+```
+
+### **POST Endpoints**
+
+```http
+POST /api/conversations/start/    # Start new chat
+POST /api/conversations/send/     # Send message
+POST /api/conversations/end/      # End conversation & generate summary
+POST /api/conversations/query/    # Ask AI about past chats
+```
