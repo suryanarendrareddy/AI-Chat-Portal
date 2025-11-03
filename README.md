@@ -9,53 +9,53 @@ AI-Chat Portal is a full-stack web application that allows users to chat with an
 
 This Project includes:
 
-* Real-Time chat with AI
-* Conversation Storage
-* AI-generated summaries
-* Semantic search using embeddings
-* Querying past conversations
-* Full REST API (Django REST framework)
-* React + Tailwind responsive UI
+- Real-Time chat with AI
+- Conversation Storage
+- AI-generated summaries
+- Semantic search using embeddings
+- Querying past conversations
+- Full REST API (Django REST framework)
+- React + Tailwind responsive UI
 
 ## Features
 
 Core Features
 
-* Real - Time Chat with LLM (OpenAI / Claude / Gemini / LM Studio)
-* Conversation Management
-  * Start Conversation
-  * Continue chat
-  * End Conversation
-  * Auto generate summary
-* Intelligent conversation analysis
-  * Topic Extraction
-  * Key decisions
-  * sentiment analysis
-* Semantic Search
-  * Find conversations by meaning
-* AI Query System
-  * " What did I talk about last week? "
-  * " Show my travel planning conversations ? "
-* Conversation Insights
-  * Summary
-  * Topics
-  * Action Items
+- Real - Time Chat with LLM (OpenAI / Claude / Gemini / LM Studio)
+- Conversation Management
+  - Start Conversation
+  - Continue chat
+  - End Conversation
+  - Auto generate summary
+- Intelligent conversation analysis
+  - Topic Extraction
+  - Key decisions
+  - sentiment analysis
+- Semantic Search
+  - Find conversations by meaning
+- AI Query System
+  - " What did I talk about last week? "
+  - " Show my travel planning conversations ? "
+- Conversation Insights
+  - Summary
+  - Topics
+  - Action Items
 
 ## Tech Stack
 
 Backend
 
-* Django
-* Django REST Framework
-* PostgreSQL
-* Python
-* OpenAI/Claude/Gemini OR LM Studio
+- Django
+- Django REST Framework
+- PostgreSQL
+- Python
+- OpenAI/Claude/Gemini OR LM Studio
 
 Frontend
 
-* React
-* Tailwind CSS
-* Axios
+- React
+- Tailwind CSS
+- Axios
 
 ## Database Schema
 
@@ -116,8 +116,8 @@ AI-Chat-Portal/
 
 1. Clone Repository
 
-* git clone <https://github.com/suryanarendrareddy/AI-Chat-Portal.git>
-* cd AI-Chat-Portal
+- git clone <https://github.com/suryanarendrareddy/AI-Chat-Portal.git>
+- cd AI-Chat-Portal
 
 ## Backend Setup (Django + PostgreSQL)
 
@@ -184,7 +184,7 @@ npm run dev
 
 Once the backend is running:
 
-###  Swagger UI
+### Swagger UI
 
 ```
 http://localhost:8000/api/docs/
@@ -209,3 +209,14 @@ POST /api/conversations/send/     # Send message
 POST /api/conversations/end/      # End conversation & generate summary
 POST /api/conversations/query/    # Ask AI about past chats
 ```
+
+
+
+
+
+
+
+## 👤 Author
+
+**Muli Surya Narendra Reddy**
+Full-Stack Developer
