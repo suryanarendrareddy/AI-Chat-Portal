@@ -82,6 +82,7 @@ Messages Table
 
 ## Project Structure
 
+```bash
 AI-Chat-Portal/
 │
 ├── backend/
@@ -109,18 +110,19 @@ AI-Chat-Portal/
 └── sample_data/
     ├── conversations.json
     └── insights.json
+```
 
 ## Setup Instructions
 
 1. Clone Repository
-git clone <https://github.com/suryanarendrareddy/AI-Chat-Portal.git>
-cd AI-Chat-Portal
+* git clone <https://github.com/suryanarendrareddy/AI-Chat-Portal.git>
+* cd AI-Chat-Portal
 
 ## Backend Setup (Django + PostgreSQL)
 
 1. Create Virtual Environment
 
-*cd backend
-*python -m venv env
-*source env/bin/activate   # For Linux/Mac
-*env\Scripts\activate      # For Windows
+* cd backend
+* python -m venv env
+* source env/bin/activate   # For Linux/Mac
+* env\Scripts\activate      # For Windows
