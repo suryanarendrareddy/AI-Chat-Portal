@@ -44,13 +44,15 @@ Core Features
 ## Tech Stack
 
 Backend
-Django
-Django REST Framework
-PostgreSQL
-Python
-OpenAI/Claude/Gemini OR LM Studio
+
+  * Django
+  * Django REST Framework
+  * PostgreSQL
+  * Python
+  * OpenAI/Claude/Gemini OR LM Studio
 
 Frontend
-React
-Tailwind CSS
-Axios
+
+  * React
+  * Tailwind CSS
+  * Axios
