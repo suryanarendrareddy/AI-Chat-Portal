@@ -1,4 +1,4 @@
-# AI-Chat-Portal
+# **AI-Chat-Portal**
 
 Intelligent Conversation System with LLM-Powered Analysis
 Full Stack development Assignment - Final Submission
@@ -115,6 +115,7 @@ AI-Chat-Portal/
 ## Setup Instructions
 
 1. Clone Repository
+
 * git clone <https://github.com/suryanarendrareddy/AI-Chat-Portal.git>
 * cd AI-Chat-Portal
 
@@ -126,3 +127,22 @@ AI-Chat-Portal/
 * python -m venv env
 * source env/bin/activate   # For Linux/Mac
 * env\Scripts\activate      # For Windows
+
+2. Install Dependencies
+
+* pip install -r requirements.txt
+
+3. Configure PostgreSQL
+
+update settings.py:
+
+* DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'chatdb',
+        'USER': 'postgres',
+        'PASSWORD': 'yourpassword',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
