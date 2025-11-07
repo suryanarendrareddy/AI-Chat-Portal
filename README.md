@@ -1,223 +1,247 @@
-# **AI-Chat-Portal**
+AI-Chat-Portal
+🧠 Intelligent Real-Time Chat System powered by OpenAI
 
-Intelligent Conversation System with LLM-Powered Analysis
-Full Stack development Assignment - Final Submission
+Full Stack Development Final Submission
 
-## Overview
+📘 Overview
 
-AI-Chat Portal is a full-stack web application that allows users to chat with an LLM in real time, store conversations, generate summaries, perform symantic search, and ask intelligent questions about past conversations.
+AI-Chat Portal is a full-stack intelligent chat system that allows users to chat with an AI assistant (LLM) in real-time.
+Users can log in securely, interact with AI, and manage all their past conversations — all stored persistently in a PostgreSQL database.
 
-This Project includes:
+This system supports:
 
-- Real-Time chat with AI
-- Conversation Storage
-- AI-generated summaries
-- Semantic search using embeddings
-- Querying past conversations
-- Full REST API (Django REST framework)
-- React + Tailwind responsive UI
+User authentication (JWT)
 
-## Features
+Real-time AI chat powered by OpenAI GPT
 
-Core Features
+Conversation storage & retrieval
 
-- Real - Time Chat with LLM (OpenAI / Claude / Gemini / LM Studio)
-- Conversation Management
-  - Start Conversation
-  - Continue chat
-  - End Conversation
-  - Auto generate summary
-- Intelligent conversation analysis
-  - Topic Extraction
-  - Key decisions
-  - sentiment analysis
-- Semantic Search
-  - Find conversations by meaning
-- AI Query System
-  - " What did I talk about last week? "
-  - " Show my travel planning conversations ? "
-- Conversation Insights
-  - Summary
-  - Topics
-  - Action Items
+Chat history listing in a sidebar
 
-## Tech Stack
+Token-secured REST API (Django + DRF)
 
+Fully responsive frontend built with React + Tailwind CSS
+
+⚙️ Features
+💬 Core Chat
+
+Real-time chat with AI using OpenAI GPT models (gpt-4o-mini)
+
+AI responds contextually to user queries
+
+Persistent chat history for each logged-in user
+
+👤 Authentication
+
+User Registration & Login using JWT
+
+Password Reset (Email via SendGrid)
+
+Secure token-based access to chat endpoints
+
+🧭 Conversation Management
+
+Start and continue conversations seamlessly
+
+View stored chat history in sidebar
+
+Auto-created “Main Chat” for every user
+
+🎨 UI Features
+
+Modern responsive UI built with Tailwind
+
+Dark Mode friendly styling
+
+Typing loader animation for AI responses
+
+Smooth scroll & markdown support for code snippets
+
+🧩 Tech Stack
 Backend
 
-- Django
-- Django REST Framework
-- PostgreSQL
-- Python
-- OpenAI/Claude/Gemini OR LM Studio
+Django
+
+Django REST Framework
+
+PostgreSQL
+
+Python 3.12
+
+OpenAI API (GPT-4o-mini)
 
 Frontend
 
-- React
-- Tailwind CSS
-- Axios
+React (Vite)
 
-## Database Schema
+TypeScript
 
+Tailwind CSS
+
+Axios
+
+React Query
+
+React Markdown + Syntax Highlighter
+
+🗄️ Database Schema
 Conversations Table
-
-| Field      | Type     | Description          |
-| ---------- | -------- | -------------------- |
-| id         | UUID     | Primary key          |
-| title      | String   | Conversation title   |
-| started_at | DateTime | Start time           |
-| ended_at   | DateTime | End time             |
-| status     | String   | active/ended         |
-| summary    | Text     | AI generated summary |
-
+Field	Type	Description
+id	UUID	Primary Key
+user	FK	Linked to User
+title	String	Conversation Title
+started_at	DateTime	Start Time
+ended_at	DateTime	End Time
+status	String	Active / Ended
 Messages Table
-
-| Field           | Type     | Description               |
-| --------------- | -------- | ------------------------- |
-| id              | UUID     | Primary key               |
-| conversation_id | FK       | Reference to conversation |
-| sender          | user/ai  | Who sent the message      |
-| content         | Text     | Message text              |
-| timestamp       | DateTime | When message was sent     |
-
-## Project Structure
-
-```bash
+Field	Type	Description
+id	UUID	Primary Key
+conversation	FK	Linked to Conversation
+sender	String	"user" or "assistant"
+content	Text	Message Text
+created_at	DateTime	Timestamp
+📂 Project Structure
 AI-Chat-Portal/
 │
 ├── backend/
-│   ├── ai/
-│   │   ├── embeddings.py
-│   │   ├── summarizer.py
-│   │   └── llm_client.py
 │   ├── api/
-│   ├── models/
-│   ├── serializers/
-│   ├── views/
-│   ├── urls.py
+│   │   ├── views.py          # ChatAPIView, Auth Views
+│   │   ├── urls.py           # All API endpoints
+│   │   ├── serializers.py
+│   │   ├── models.py
+│   │   └── token_views.py
 │   ├── manage.py
+│   ├── server/
+│   │   └── settings.py       # Django + PostgreSQL config
 │   └── requirements.txt
 │
 ├── frontend/
 │   ├── src/
 │   │   ├── pages/
+│   │   │   └── HomePage.tsx
 │   │   ├── components/
-│   │   ├── hooks/
-│   ├── package.json
-│   └── tailwind.config.js
+│   │   │   ├── AppSidebar.tsx
+│   │   │   ├── Login.tsx
+│   │   │   ├── Register.tsx
+│   │   │   ├── TypingLoader.tsx
+│   │   │   └── MainLayout.tsx
+│   │   ├── context/
+│   │   │   └── AuthContext.tsx
+│   │   ├── lib/
+│   │   │   └── api.ts        # Axios + API handlers
+│   │   ├── App.tsx
+│   │   └── main.tsx
+│   ├── tailwind.config.js
+│   └── package.json
 │
+├── .env
 ├── README.md
 └── sample_data/
-    ├── conversations.json
-    └── insights.json
-```
 
-## Setup Instructions
+⚙️ Setup Instructions
+1️⃣ Clone Repository
+git clone https://github.com/suryanarendrareddy/AI-Chat-Portal.git
+cd AI-Chat-Portal
 
-1. Clone Repository
-
-- git clone <https://github.com/suryanarendrareddy/AI-Chat-Portal.git>
-- cd AI-Chat-Portal
-
-## Backend Setup (Django + PostgreSQL)
-
-### **1. Create Virtual Environment**
-
-```bash
+🐍 Backend Setup (Django + PostgreSQL)
+1. Create Virtual Environment
 cd backend
-python -m venv env
-source env/bin/activate   # For Linux/Mac
-env\Scripts\activate      # For Windows
-```
+python -m venv .venv
+.venv\Scripts\activate     # For Windows
+# or
+source .venv/bin/activate  # For Mac/Linux
 
-### **2. Install Dependencies**
-
-```bash
+2. Install Dependencies
 pip install -r requirements.txt
-```
 
-### **3. Configure PostgreSQL**
+3. Configure Environment (.env)
+DEBUG=True
+ALLOWED_HOSTS=127.0.0.1,localhost
 
-Update **settings.py**:
+OPENAI_API_KEY=sk-xxxxx
+DATABASE_URL=postgres://postgres:yourpassword@localhost:5432/ai_chat_db
 
-```python
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'chatdb',
-        'USER': 'postgres',
-        'PASSWORD': 'yourpassword',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
-```
+EMAIL_BACKEND=django.core.mail.backends.smtp.EmailBackend
+EMAIL_HOST=smtp.sendgrid.net
+EMAIL_PORT=587
+EMAIL_USE_TLS=True
+EMAIL_HOST_USER=apikey
+EMAIL_HOST_PASSWORD=SG.xxxxx
+DEFAULT_FROM_EMAIL=AI Chat Portal <no-reply@aichatportal.com>
 
-### **4. Run Migrations**
-
-```bash
+4. Run Migrations
 python manage.py migrate
-```
 
-### **5. Run Backend Server**
-
-```bash
+5. Run Backend Server
 python manage.py runserver
-```
 
-## Frontend Setup (React + Tailwind)
 
-### **1. Install Node Modules**
+✅ Backend running at http://127.0.0.1:8000/
 
-```bash
+⚛️ Frontend Setup (React + Vite + Tailwind)
+1. Install Node Modules
 cd frontend
 npm install
-```
 
-### **2.Run Frontend**
-
-```sql
+2. Run Frontend
 npm run dev
-```
-
-## API Documentation (OpenAPI / Swagger)
-
-Once the backend is running:
-
-### Swagger UI
-
-```
-http://localhost:8000/api/docs/
-```
-
----
-
-## API Endpoints
-
-### **GET Endpoints**
-
-```http
-GET /api/conversations/           # List all conversations
-GET /api/conversations/<id>/      # Full message history
-```
-
-### **POST Endpoints**
-
-```http
-POST /api/conversations/start/    # Start new chat
-POST /api/conversations/send/     # Send message
-POST /api/conversations/end/      # End conversation & generate summary
-POST /api/conversations/query/    # Ask AI about past chats
-```
 
 
+✅ Frontend running at http://localhost:5173/
 
+🔐 API Endpoints
+Endpoint	Method	Description
+/api/auth/register/	POST	Register new user
+/api/auth/login/	POST	Get JWT tokens
+/api/auth/refresh/	POST	Refresh JWT token
+/api/chat/	POST	Send message to AI
+/api/chat/<uuid:chat_id>/	GET	Retrieve all chat messages
+/api/conversations/	GET/POST	Manage user conversations
+🧠 AI Integration
 
+Model: GPT-4o-mini (OpenAI)
 
+Library: openai Python SDK
 
+Features:
 
-## 👤 Author
+Contextual understanding
 
-**Muli Surya Narendra Reddy**  
-*Full-Stack Developer*
+Markdown code rendering
 
+Assistant persona: “Ergosphere”
+
+📸 UI Preview
+
+Login Page
+
+JWT Authentication
+
+Modern gradient design
+
+Chat Interface
+
+Real-time AI replies
+
+Syntax-highlighted code
+
+Persistent chat sessions
+
+🚀 Future Enhancements
+
+AI conversation summarization
+
+Conversation search (semantic)
+
+Chat export as PDF
+
+Multi-model support (Claude, Gemini, LM Studio)
+
+Dark/Light mode toggle
+
+👤 Author
+
+Muli Surya Narendra Reddy
+Full-Stack Developer
+📍 Bengaluru, India
+📧 LinkedIn / GitHub
