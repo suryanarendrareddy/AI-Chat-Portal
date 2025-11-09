@@ -23,6 +23,10 @@ const Login: React.FC = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-gray-900 via-gray-950 to-black text-white">
       <div className="w-full max-w-md bg-gray-900/80 border border-gray-800 rounded-2xl shadow-2xl backdrop-blur-md p-8">
+        <div className="flex flex-row justify-center gap-2 pb-5">
+          <img src="/favIcon.png" alt="Logo" className="w-10" />
+          <p className="text-white text-3xl font-extrabold">ErgoSphere</p>
+        </div>
         <h2 className="text-3xl font-bold text-center bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent mb-6">
           Welcome Back
         </h2>

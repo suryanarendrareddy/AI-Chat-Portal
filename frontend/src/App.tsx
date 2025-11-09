@@ -28,7 +28,7 @@ const App = () => {
           <Route path="chats/:chat_uid" element={<HomePage />} />
           <Route path="chats/new" element={<HomePage />} />
         </Route>
-      </Routes>cc
+      </Routes>
   )
 }
 
